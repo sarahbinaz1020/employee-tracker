@@ -30,17 +30,37 @@ function init(){
     name: "whatToDo",
     message: "What would you like to do?",
     choices: [
-      "View All Flavors",
-      "Add A Flavor",
+      "Add A Department",
+      "Add A Role",
+      "Add An Employee",
+      "View All Departments",
+      "View All Roles",
+      "View All Employees",
+      "Update Employee Role",
       "Exit"
     ]
   }]).then(function(response){
     switch(response.whatToDo){
-      case "View All Flavors":
-        viewFlavors();
+      case "Add A Department":
+        addDepartment();
         break;
-      case "Add A Flavor":
-        addFlavor();
+      case "Add A Role":
+        addRole();
+        break;
+      case "Add An Employee":
+        addEmployee();
+        break;
+      case "View All Departments":
+        viewDepartment();
+        break;
+      case "View All Roles":
+        viewRole();
+        break;
+      case "View All Employees":
+        viewEmployee();
+        break;
+      case "Update Employee Role":
+        updateEmployeeRole();
         break;
       default:
         connection.end();
@@ -48,6 +68,24 @@ function init(){
   })
 }
 
+
+function addDepartment() {
+  inquirer.prompt([{
+    type: "list",
+    name: "department_add",
+    message: "What department would you like to add?",
+    choices: ["Sales", "Engineering", "Finance", "Legal"],
+  }])
+}
+
+function addRole(){
+  inquirer.prompt([{
+    type: "List",
+    name: "title_add",
+    message: "What title would you like to add?",
+    choices: ["Sales Lead", "Salesperson", "Lead Engineer", "Software Engineer", "Accountant", "Junior Accountant", "Legal Team Lead", "Lawyer"],
+  }])
+}
 
 function viewFlavors(){
   connection.query("SELECT * FROM products", function(err, data){
