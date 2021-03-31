@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/sarahbinaz1020/employee-tracker#readme",
   "dependencies": {
-    "inquirer": "^8.0.0"
-  }
+    "inquirer": "^8.0.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {}
 }
