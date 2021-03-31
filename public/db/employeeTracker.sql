@@ -22,9 +22,9 @@ CREATE TABLE people (
     -- numeric id that will automatically increment
     id INT(255) AUTO_INCREMENT NOT NULL,
     -- make a string for first name
-    first_name VARCHAR (30),
+    first_name VARCHAR (30) NOT NULL,
     -- make a string for last name
-    last_name VARCHAR(30),
+    last_name VARCHAR(30) NOT NULL,
     -- numeric value for employee role
     role_id INT NOT NULL,
     -- numeric value for manager for employee being created, can be null
